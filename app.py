@@ -37,7 +37,7 @@ def update_twitter():
 
     mentions = api.search(q="@TraderData Analyze:")
 
-    print(mentions)
+    #print(mentions)
     words = []
     try:
         command = mentions["statuses"][0]["text"]
