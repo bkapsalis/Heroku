@@ -32,13 +32,14 @@ def update_twitter():
     # Create dictionary to hold text and label entities
     tweet_dict = {"text": [], "label": []}
 
-    mentions = api.search(q="@TraderData Analyze:")
-    print(mentions)
+    #mentions = api.search(q="@TraderData Analyze:")
+    mentions = api.search(q="@realdonaldtrump Analyze:")
+    #print(mentions)
     words = []
     try:
         command = mentions["statuses"][0]["text"]
         words = command.split("Analyze:")
-        target_account = words[1].strip()
+        target_account = words[0].strip()
         user_tweets = api.user_timeline(target_account, page=1)
 
         # Loop through tweets
@@ -91,7 +92,7 @@ def update_twitter():
 
 # Have the Twitter bot update once a day for a week
 days = 0
-while days < 7:
+while days < 3:
     print("Updating Twitter")
 
     # Update the twitter
