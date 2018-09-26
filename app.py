@@ -18,9 +18,6 @@ consumer_secret = os.environ.get("consumer_secret")
 access_token = os.environ.get("access_token")
 access_token_secret = os.environ.get("access_token_secret")
 
-
-
-
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -36,8 +33,7 @@ def update_twitter():
     tweet_dict = {"text": [], "label": []}
 
     mentions = api.search(q="@TraderData Analyze:")
-
-    #print(mentions)
+    print(mentions)
     words = []
     try:
         command = mentions["statuses"][0]["text"]
